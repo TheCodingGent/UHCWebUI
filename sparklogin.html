@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Spark Login Example</title>
+  </head>
+
+  <body>
+    <div id="spark-login" />
+
+    <!--Including jquery and javascript scripts -->
+    <script src="js/spark.min.js"></script>
+    <script>
+      sparkLogin(function(data) {
+        console.log(data);
+        var login_data = data;
+        console.log(login_data.access_token);
+      });
+    </script>
+  </body>
+</html>

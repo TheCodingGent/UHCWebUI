@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Universal Home Controller</title>
+		
+		<!--This meta is to keep the view compatible with desktop and mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- for MetsiMenu -->
+		<link rel="stylesheet" href="Extensions/metisMenu-master/dist/metisMenu.min.css">
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				
+				<a href="index.html" class="navbar-brand">UHC</a>
+				
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="index.html">Home</a></li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Twitter</a> </li>
+								<li><a href="http://www.facebook.com/Yasser.Ghamlouch">Facebook</a> </li>
+								<li><a href="#">Google+</a> </li>
+								<li><a href="#">Instagram</a> </li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class = "container">
+			<div class="panel-group" id="accordion">
+			   <div class="panel panel-default">
+			      <div class="panel-heading">
+			         <h4 class="panel-title">
+			            <a data-toggle="collapse" data-parent="#accordion" 
+			               href="#collapseOne">
+			               Click me to expand the available <b>doors</b>. <!--hide method-->
+			            </a>
+			         </h4>
+			      </div>
+			      
+			      <div id="collapseOne" class="panel-collapse collapse in">
+			         <div class="panel-body">
+			        	
+			         	<div class="panel panel-default">
+					      <div class="panel-heading">
+					         <h4 class="panel-title">
+					            <a data-toggle="collapse" data-parent="#collapseOne" 
+					               href="#collapseOneOne">
+					               Door1 <!--hide method-->
+					            </a>
+					            <a data-toggle="collapse" data-parent="#collapseOne" 
+					               href="#collapseOneTwo">
+					               Door2 <!--hide method-->
+					            </a>
+					         </h4>
+					      </div>
+					      
+					      <div id="collapseOneOne" class="panel-collapse collapse in">
+					         <div class="panel-body">
+					        	<ul class="list-group">
+								    <button type="button" class="btn btn-danger btn-lg btn-block">Lock</button>
+									<button type="button" class="btn btn-default btn-lg btn-block">Unlock</button>
+								</ul>
+					         </div>
+					      </div>
+
+					      <div id="collapseOneTwo" class="panel-collapse collapse in">
+					         <div class="panel-body">
+					        	<ul class="list-group">
+								    <button type="button" class="btn btn-danger btn-lg btn-block">Lock</button>
+									<button type="button" class="btn btn-default btn-lg btn-block">Unlock</button>
+								</ul>
+					         </div>
+					      </div>
+					   </div>
+					</div>
+			      </div>
+			   </div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container">
+				<ul class="nav navbar-nav pull-left">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!--Including jquery and javascript scripts -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script type="text/javascript">
+		   $(function () { $('#collapseFour').collapse({
+		      toggle: false
+		   })});
+		   $(function () { $('#collapseTwo').collapse('show')});
+		   $(function () { $('#collapseThree').collapse('toggle')});
+		   $(function () { $('#collapseOne').collapse('hide')});
+		</script>
+	
+	</body>
+</html>

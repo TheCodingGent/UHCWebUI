@@ -1,3 +1,15 @@
 body{
 	margin-bottom: 80px;
 }
+
+/* CSS used here will be applied after bootstrap.css */
+ul.nav-stacked ul.nav-stacked > li > a {
+  padding-left: 30px;
+}
+ul.nav-stacked ul.nav-stacked ul.nav-stacked > li > a {
+  padding-left: 45px;
+}
+span.arrow {
+  float: right;
+  margin-top: 7px;
+}

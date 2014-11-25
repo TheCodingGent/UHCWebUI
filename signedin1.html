@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Universal Home Controller</title>
+		
+		<!--This meta is to keep the view compatible with desktop and mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/bootstrap-switch.css" >
+
+		<!-- for MetsiMenu -->
+		<link rel="stylesheet" href="Extensions/metisMenu-master/dist/metisMenu.min.css">
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				
+				<a href="index.html" class="navbar-brand">UHC</a>
+				
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">Home</a></li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Twitter</a> </li>
+								<li><a href="http://www.facebook.com/Yasser.Ghamlouch">Facebook</a> </li>
+								<li><a href="#">Google+</a> </li>
+								<li><a href="#">Instagram</a> </li>
+							</ul>
+						</li>
+						<li><button href="index.html" type="button" class="navbar-btn btn-danger btn">Sign Out</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+		   <ul class="nav nav-pills nav-stacked" id="stacked-menu">
+		        <li class="doorlist">
+					<a href="#">Doors<span class="caret arrow"></span></a>
+					<ul class="nav nav-pills nav-stacked" id="doors">
+						<li>
+							<a href="#">Main Door<span class="caret arrow"></span></a>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Lock</a></li>
+								<li><a href="#">Unlock</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Back Door</a></li>
+						<li class="nav-divider"></li>
+						<li><a href="#">Add a new door!</a></li>
+						<!--<input><button>+</button>-->
+					</ul>
+		        </li>
+		        
+		        <li>
+					<a href="#">Lights<span class="caret arrow"></span></a>
+					<ul class="nav nav-pills nav-stacked">
+					<li>
+						<a href="#">Kitchen Main</a>
+						<ul class="nav nav-pills nav-stacked">
+							<li><input type="checkbox" name="my-checkbox" checked><li>
+						</ul>
+					</li>
+					<li><a href="#">Living Room Main</a></li>
+					<li><a href="#">Bedroom Main</a></li>
+					<li class="nav-divider"></li>
+					<li><a href="#">Add a new light!</a></li>
+					</ul>
+		        </li>
+		        
+		        <li><a href="#">Electric Appliances<span class="caret arrow"></span></a>
+		        	<ul class="nav nav-pills nav-stacked">
+			            <li><a href="#">Oven</a></li>
+			            <li><a href="#">Washer</a></li>
+			            <li><a href="#">Fridge</a></li>
+			            <li class="nav-divider"></li>
+			            <li><a href="#">Add a new appliance</a></li>
+			        </ul>
+			  	</li>
+		        
+		        <li><a href="#">Power Outlets<span class="caret arrow"></span></a>
+		        	<ul class="nav nav-pills nav-stacked">
+			            <li><a href="#">Kitchen PO One</a></li>
+			            <li><a href="#">Kitchen PO Two</a></li>
+			            <li><a href="#">Garage PO One</a></li>
+			            <li class="nav-divider"></li>
+			            <li><a href="#">Add a power outlet</a></li>
+			        </ul>
+				</li>
+		    </ul>
+		</div>
+
+		<div class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container">
+				<button href="#" id="spark-login" type="button" class="navbar-btn btn"></button>
+			</div>
+		</div>
+
+		
+		<!--Including jquery and javascript scripts -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-switch.js"></script>
+		<!-- MetsiMenu extension-->
+		<script src="Extensions/metisMenu-master/dist/metisMenu.min.js"></script>
+		<!--<script src="jquery.metisMenu.js"></script>-->
+		
+		<script type="text/javascript">
+			$("[name='my-checkbox']").bootstrapSwitch();
+		</script>
+
+		<script>
+    		$(function () {
+        		$('#menu').metisMenu();
+    		});
+		</script>
+
+		<script type="text/javascript">
+
+			(function ($, window, document, undefined) {
+
+			    var pluginName = "metisMenu",
+			    defaults = {
+			        toggle: true
+			    };
+			        
+			    function Plugin(element, options) {
+			        this.element = element;
+			        this.settings = $.extend({}, defaults, options);
+			        this._defaults = defaults;
+			        this._name = pluginName;
+			        this.init();
+			    }
+
+			    Plugin.prototype = {
+			        init: function () {
+
+			            var $this = $(this.element),
+			                $toggle = this.settings.toggle;
+
+			            $this.find('li.active').has('ul').children('ul').addClass('collapse in');
+			            $this.find('li').not('.active').has('ul').children('ul').addClass('collapse');
+
+			            $this.find('li').has('ul').children('a').on('click', function (e) {
+			                e.preventDefault();
+
+			                $(this).parent('li').toggleClass('active').children('ul').collapse('toggle');
+
+			                if ($toggle) {
+			                    $(this).parent('li').siblings().removeClass('active').children('ul.in').collapse('hide');
+			                }
+			            });
+			        }
+			    };
+
+			    $.fn[ pluginName ] = function (options) {
+			        return this.each(function () {
+			            if (!$.data(this, "plugin_" + pluginName)) {
+			                $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+			            }
+			        });
+			    };
+
+			})(jQuery, window, document);
+				
+			$(function() {
+				$('#stacked-menu').metisMenu({
+					toggle: false
+				});
+			});
+		</script>
+
+
+		<!-- Spark Core Scripts -->
+		<script src="js/spark.min.js"></script>
+	    <script>
+	      sparkLogin(function(data) {
+	        var login_data = data;
+	        //console.log(login_data.access_token);
+	      });
+	    </script>
+
+
+		<!-- To be edited-->
+		<script type="text/javascript">
+			var main = function () {
+				"use strict";
+				$(".doorlist button").on("click", function (event) {
+					var $new_elem;
+					if ($(".doorlist input").val() !== "") {
+						$new_elem = $("<li><a>").text($(".doorlist input").val());
+						$("#doors").append($new_elem);
+						var ul = document.getElementById("doors");
+						var li = document.createElement("li");
+						li.appendChild(document.createTextNode("Your list item text"));
+						ul.appendChild(li);
+					}
+				});
+			};
+
+			$(document).ready(main);
+		</script>
+
+	</body>
+</html>
