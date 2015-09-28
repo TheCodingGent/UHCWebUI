@@ -6,6 +6,7 @@
 		<!--This meta is to keep the view compatible with desktop and mobile devices -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<!-- Links to styling sheets .css files -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/styles.css">
@@ -14,29 +15,26 @@
 	<body>
 		<div class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
-				
 				<a href="index.html" class="navbar-brand">UHC</a>
-				
+				<!-- This is a dropdown menu for when the app switches into mobile view -->
 				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 
+				<!-- this div represents the top right menu of the home page -->
 				<div class="collapse navbar-collapse navHeaderCollapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="index.html">Home</a></li>
-						
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Twitter</a> </li>
-								<li><a href="http://www.facebook.com/Yasser.Ghamlouch">Facebook</a> </li>
+								<li><a href="https://www.facebook.com/UniversalHomeController">Facebook</a></li>
 								<li><a href="#">Google+</a> </li>
-								<li><a href="#">Instagram</a> </li>
+								<li><a href="https://www.youtube.com/channel/UCZVjcHWD7dauvnZ_YinwcCA">YouTube</a> </li>
 							</ul>
 						</li>
-
 						<li><a href="#signup" data-toggle="modal">Sign up</a></li>
 						<li><button href="#signin" data-toggle="modal" type="button" class="navbar-btn btn-success btn">Sign in</button></li>
 					</ul>
@@ -96,6 +94,7 @@
 			</div>
 		</center>
 
+		<!-- Bottom navbar -->
 		<div class="navbar navbar-inverse navbar-fixed-bottom">
 			<div class="container">
 				<ul class="nav navbar-nav pull-left">
@@ -105,6 +104,7 @@
 			</div>
 		</div>
 
+		<!-- Sign up modal structure -->
 		<div class="modal fade" id="signup" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -151,6 +151,7 @@
 			</div>
 		</div>
 
+		<!-- Sign in modal structure -->
 		<div class="modal fade" id="signin" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -183,6 +184,7 @@
 			</div>
 		</div>
 
+		<!-- About us modal structure -->
 		<div class="modal fade" id="aboutus" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -233,9 +235,8 @@
 			</div>
 		</div>
 
-		<!--Including jquery and javascript scripts -->
+		<!--Including javascript scripts -->
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-
 	</body>
 </html>
